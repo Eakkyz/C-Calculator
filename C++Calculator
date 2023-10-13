@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+int main()
+{//กำตัวเเปร 
+	char op;
+	int num1, num2, num3;
+	int sum = 0;
+
+	//รับค่าตัวเเปร
+	cout << "|    C++ Calculator    |" << endl;
+	cout << "========== TIPS ==========="<<endl;
+	cout << "1.(Input Your First number)" << endl << "2.(+-*/ )" << endl 
+		<< "3.(Then Your Second Number)" 
+		<< endl << "============================"<<endl
+		<<">>> Input <<<" << endl;
+	cin >> num1;
+	cin >> op;
+	cin >> num2;
+	//ตรวจสอบค่าในตัวเเปร op
+	switch (op) {
+	case'+':
+		sum = num1 + num2;
+		cout << sum << endl;
+		break;
+	case'-':
+		sum = num1 - num2;
+		cout << sum << endl;
+		break;
+	case'*':
+		sum = num1 * num2;
+		cout << sum << endl;
+		break;
+	case'/':
+		sum = num1 / num2;
+		cout << sum << endl;
+		break;
+	default:
+		cout << "Wrong Operator!, Try Again" << endl;
+	}
+
+	//loop          //ทำให้จำนวนครั้งในการ loop เป็นอนันต์
+	for (int count = 1; count <= INFINITY; count--) {
+		cout << "-----------------------------------------------------------------"<<endl;
+		cout << "Total : " << sum 
+			<<" | PRESS ENTER 0 TWO TIMES TO END PROGRAM"
+			<< endl;  //เเสดงค่าปัจจุบัน
+		cout << sum;
+		cin >> op;
+		cin >> num3;
+		switch (op) {
+		case'+':
+			sum = sum + num3;
+			cout << sum << endl;
+			break;
+		case'-':
+			sum = sum - num3;
+			cout << sum << endl;
+			break;
+		case'*':
+			sum = sum * num3;
+			cout << sum << endl;
+			break;
+		case'/':
+			sum = sum / num3;
+			cout << sum << endl;
+			break;
+		default:
+			cout << "Wrong Operator!, Try Again!!" << endl;
+			break;
+		}if (num3 == 0) {      //ตรวจสอบค่าตัวเเปร num3
+			cout << "END PROGRAMS";
+			break;
+		}
+
+	}
+}
